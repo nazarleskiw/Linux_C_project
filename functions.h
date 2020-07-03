@@ -15,3 +15,6 @@ typedef int bool;
 
 char *programSelect[6];
 void programId(int progId);
+int parseGetopt(int argc, char *argv[]);
+bool isPrime(int n);
+int next_prime(int n);
