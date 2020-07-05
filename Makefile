@@ -4,28 +4,28 @@ all:	1konsola.out 2argument.out 3pipe.out 4jajko.out 5Netlink.out 6network.out m
 
 apps:   1konsola.out 2argument.out 3pipe.out 4jajko.out 5Netlink.out 6network.out
 
-1konsola.out:	1konsola.o functions.o
+1konsola.out: 1konsola.o functions.o
 	gcc $(CFLAGS)   ./compiled/1konsola.o ./compiled/functions.o -o ./exec/1konsola.out
 	 
 
-2argument.out:	2argument.o functions.o
+2argument.out: 2argument.o functions.o
 	gcc $(CFLAGS)   ./compiled/2argument.o ./compiled/functions.o -o ./exec/2argument.out -lm
 	
 
-3pipe.out:	3pipe.o functions.o
+3pipe.out: 3pipe.o functions.o
 	gcc $(CFLAGS)   ./compiled/3pipe.o ./compiled/functions.o -o ./exec/3pipe.out
  
 
-4jajko.out:	4jajko.o functions.o
+4jajko.out: 4jajko.o functions.o
 	gcc $(CFLAGS)   ./compiled/4jajko.o ./compiled/functions.o -o ./exec/4jajko.out
 
-5Netlink.out:	5Netlink.o functions.o
+5Netlink.out: 5Netlink.o functions.o
 	gcc $(CFLAGS)   ./compiled/5Netlink.o ./compiled/functions.o -o ./exec/5Netlink.out
 
-6network.out:	6network.o functions.o
+6network.out: 6network.o functions.o
 	gcc $(CFLAGS)   ./compiled/6network.o ./compiled/functions.o -o ./exec/6network.out
 	
-1konsola.o:	1konsola.c functions.h
+1konsola.o: 1konsola.c functions.h
 	@echo Program No.1 build konsola
 	gcc $(CFLAGS)  -c program1.c -o ./compiled/1konsola.o
 
@@ -41,11 +41,11 @@ apps:   1konsola.out 2argument.out 3pipe.out 4jajko.out 5Netlink.out 6network.ou
 	@echo Program No.4 build egg
 	gcc $(CFLAGS)  -c program4.c -o ./compiled/4jajko.o
 
-5Netlink.o:	5Netlink.c functions.h
+5Netlink.o: 5Netlink.c functions.h
 	@echo Program No.5 build netlink
 	gcc $(CFLAGS)  -c program5.c -o ./compiled/5Netlink.o
 
-6network.o:	6network.c functions.h
+6network.o: 6network.c functions.h
 	@echo Program No.6 build network
 	gcc  -c program6.c -o ./compiled/6network.o 
 	
