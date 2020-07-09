@@ -19,6 +19,34 @@ int main(int argc, char *argv[])
     int fd;
     char *myfifo = "/tmp/myfifo";
     mkfifo(myfifo, 0666);
+    pid_t processId = fork();
+
+    if (processId == -1)
+         {
+             perror("Error");
+         }
+
+    else if (processId == 0)
+
+    {
+        fd = open(myfifo,O_WRONLY); //open to wriing only
+
+        if (write(fd, str ,sizeof(str)) < 0)
+        {
+            perror("Error");
+        }
+
+        close(fd);
+        exit(0);
+    }
+
+    else
+
+    {
+        fflush(stdout);
+        fprintf(stderr,"Argument %s sent to FIFO",str);
+        execl("./exec/3pipe.out", "empty", NULL);
+    }
 
 
 }
